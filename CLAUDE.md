@@ -39,8 +39,12 @@ Funciona como hoja de vida comercial. Se publicará en **GitHub Pages** (sitio e
 │   │   ├── components.css   (botones, tarjetas, chips, formularios)
 │   │   └── animations.css   (keyframes y clases de animación)
 │   ├── js/
-│   │   ├── main.js          (punto de entrada)
-│   │   └── modules/         (un módulo por responsabilidad: contacto, whatsapp, menú móvil…)
+│   │   ├── main.js          (punto de entrada: solo compone)
+│   │   ├── config.js        (WhatsApp, correo, endpoint del formulario)
+│   │   └── modules/
+│   │       ├── whatsapp.js      (enlaces y mensaje para WhatsApp)
+│   │       ├── emailSender.js   (envío por FormSubmit; reemplazable)
+│   │       └── contactForm.js   (validación y estado del formulario)
 │   ├── img/                 (foto, capturas de proyectos)
 │   └── docs/                (hoja de vida en PDF)
 ├── CLAUDE.md
@@ -51,15 +55,17 @@ Funciona como hoja de vida comercial. Se publicará en **GitHub Pages** (sitio e
 1. Refactorizar `index.html` a la estructura objetivo: mover estilos en línea a clases reutilizables con variables CSS.
    El resultado visual debe quedar idéntico.
 2. Hacerlo responsive y revisar la vista móvil (menú hamburguesa en celular).
-3. Botón flotante de WhatsApp visible en toda la página.
-4. Formulario de contacto: conectarlo a Formspree y/o abrir WhatsApp con el mensaje armado. (GitHub Pages no tiene backend.)
+3. ~~Botón flotante de WhatsApp~~ HECHO.
+4. ~~Formulario de contacto~~ HECHO (FormSubmit + WhatsApp). El JS usa módulos ES: funciona en GitHub Pages o con un servidor local, no abriendo el archivo con doble clic.
 5. SEO básico: meta tags, Open Graph, favicon, `sitemap.xml`, `robots.txt`.
 6. Publicar en GitHub Pages (repo `<usuario>.github.io`, rama `main`).
 7. Ideas a futuro: formulario de cotización guiado (sin precios), páginas de detalle por proyecto, selector español/inglés, modo claro.
 
 ## Datos que faltan (marcados entre [CORCHETES] en el HTML)
 - Ya cargadas: foto (`assets/img/juan-carlos-bonilla.jpg`) y capturas en `assets/img/proyectos/`.
-- Falta: [TU NÚMERO] de WhatsApp,
+- WhatsApp configurado: 317 454 7890 (`assets/js/config.js`).
+- Formulario: envío por correo con FormSubmit (requiere activación única desde el correo) y opción de enviar por WhatsApp.
+- Falta:
   testimonios reales ([TESTIMONIO], [NOMBRE], [CARGO · EMPRESA]), enlace al PDF de la hoja de vida.
 - La promesa "respondo en menos de 24 horas" está en Contacto: confirmar o cambiar.
 - No inventar cifras, testimonios ni clientes.
