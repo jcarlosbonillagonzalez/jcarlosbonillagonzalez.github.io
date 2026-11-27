@@ -4,6 +4,7 @@
  * El envío se delega en dependencias inyectadas (correo y WhatsApp).
  */
 import { buildWhatsAppUrl, formatContactMessage } from './whatsapp.js';
+import { ActivationRequiredError } from './emailSender.js';
 
 const REQUIRED_FIELDS = ['nombre', 'contacto', 'mensaje'];
 
@@ -76,8 +77,11 @@ export class ContactForm {
       this.form.reset();
       this.showStatus('¡Gracias! Recibí tu mensaje y te responderé pronto.', 'success');
     } catch (error) {
-      this.showStatus('No se pudo enviar por correo. Intenta por WhatsApp, por favor.', 'error');
-      console.error('[contacto]', error);
+      const message = error instanceof ActivationRequiredError
+        ? 'El envío por correo se está activando. Mientras tanto, escríbeme por WhatsApp, por favor.'
+        : 'No se pudo enviar por correo. Intenta por WhatsApp, por favor.';
+      this.showStatus(message, 'error');
+      console.error('[contacto]', error.message);
     } finally {
       this.setBusy(false);
     }
