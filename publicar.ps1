@@ -33,11 +33,18 @@ if (-not (git config user.name))  { git config user.name  $user }
 if (-not (git config user.email)) { git config user.email "$id+$user@users.noreply.github.com" }
 
 git add -A
-git commit -m "Sitio web personal: hoja de vida y servicios" | Out-Null
+git diff --cached --quiet
+if ($LASTEXITCODE -ne 0) {
+  $msg = Read-Host 'Describe el cambio (Enter = "Actualiza sitio web")'
+  if (-not $msg) { $msg = 'Actualiza sitio web' }
+  git commit -m $msg | Out-Null
+} else {
+  Write-Host 'No hay cambios nuevos para guardar; se revisara si falta subir algo.' -ForegroundColor Yellow
+}
 
 gh repo view "$user/$repo" *> $null
 if ($LASTEXITCODE -eq 0) {
-  Write-Host "El repositorio $repo ya existe; se subiran los archivos ahi." -ForegroundColor Yellow
+  Write-Host "Actualizando el repositorio $repo..." -ForegroundColor Cyan
   git remote remove origin *> $null
   git remote add origin "https://github.com/$user/$repo.git"
   git push -u origin main
