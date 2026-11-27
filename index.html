@@ -3,12 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Juan Carlos Bonilla · Desarrollo web y sistemas a la medida</title>
-<meta name="description" content="Ingeniero de Sistemas especialista en .NET. Desarrollo páginas web y sistemas de información a la medida en Bogotá, Colombia.">
-<meta property="og:title" content="Juan Carlos Bonilla · Desarrollo web y sistemas a la medida">
-<meta property="og:description" content="Páginas web y sistemas de información hechos a la medida de tu negocio.">
-<meta property="og:image" content="assets/img/juan-carlos-bonilla.jpg?v=2">
-<link rel="icon" href="assets/img/juan-carlos-bonilla.jpg?v=2">
+<title>Kódika Software · Páginas web y sistemas a la medida en Bogotá</title>
+<meta name="description" content="Kódika Software, de Juan Carlos Bonilla, Ingeniero de Sistemas especialista en .NET. Páginas web y sistemas de información a la medida en Bogotá, Colombia.">
+<meta name="theme-color" content="#070B12">
+<link rel="canonical" href="https://jcarlosbonillagonzalez.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jcarlosbonillagonzalez.github.io/">
+<meta property="og:site_name" content="Kódika Software">
+<meta property="og:title" content="Kódika Software · Páginas web y sistemas a la medida">
+<meta property="og:description" content="Páginas web y sistemas de información hechos a la medida de tu negocio. Bogotá, Colombia.">
+<meta property="og:image" content="https://jcarlosbonillagonzalez.github.io/assets/img/marca/og-kodika.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/img/marca/kodika-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/marca/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <style>
@@ -79,6 +89,14 @@ details[open] .faq-plus{transform:rotate(45deg)}
 .wa-float:hover{transform:scale(1.08)}
 @keyframes pulseWa{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 #contact-form [aria-invalid="true"]{border-color:#FF6B6B !important}
+.menu-toggle{display:none;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;border:1px solid #2A3A52;background:#0E1520;color:#E8EEF5;cursor:pointer}
+@media (max-width: 900px){
+.menu-toggle{display:inline-flex}
+.main-nav{display:none !important;width:100%;flex-direction:column;align-items:stretch !important;gap:4px !important;padding:8px 0 4px}
+.main-nav.is-open{display:flex !important}
+.main-nav .navlink{display:block;padding:12px 4px;border-bottom:1px solid #16202D;font-size:17px}
+.main-nav .btn-primary{justify-content:center;margin-top:8px}
+}
 </style>
 </head>
 <body>
@@ -87,14 +105,17 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <!-- NAV -->
 <header style="position: relative; z-index: 2; border-bottom: 1px solid #16202D; background: #070B12">
 <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #E8EEF5">
-<span style="width: 42px; height: 42px; border-radius: 50%; padding: 2px; background: linear-gradient(135deg, #3DDC97, #5AA9FF); display: flex"><img src="assets/img/juan-carlos-bonilla.jpg?v=2" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center 30%"></span>
-<span style="display: flex; flex-direction: column; line-height: 1.2">
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">Juan Carlos Bonilla</span>
-<span style="font-size: 12px; color: #A3B0BF">Desarrollo web &amp; software a la medida</span>
+<a href="#inicio" aria-label="Kódika Software, inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #E8EEF5">
+<img src="assets/img/marca/kodika-icon.svg" alt="" width="42" height="42" style="display: block">
+<span style="display: flex; flex-direction: column; line-height: 1.1">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: -0.02em">K<span style="background: linear-gradient(90deg, #3DDC97, #5AA9FF); -webkit-background-clip: text; background-clip: text; color: transparent">ó</span>dika <span style="font-weight: 600; font-size: 15px; color: #A3B0BF">Software</span></span>
+<span style="font-size: 12px; color: #A3B0BF">por Juan Carlos Bonilla</span>
 </span>
 </a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px">
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú" data-menu-toggle>
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+</button>
+<nav id="menu-principal" class="main-nav" aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; font-size: 15px">
 <a class="navlink" href="#servicios">Servicios</a>
 <a class="navlink" href="#planes">Soluciones</a>
 <a class="navlink" href="#proyectos">Proyectos</a>
@@ -473,7 +494,7 @@ details[open] .faq-plus{transform:rotate(45deg)}
 </div>
 <div class="reveal" style="flex: 1.3 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
 <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: rgba(255,122,182,0.12); color: #FFA8CF; font-size: 13px; font-weight: 600; letter-spacing: 0.04em">SOBRE MÍ</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.1rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: #FFFFFF">Hola, soy Juan Carlos.</h2>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.1rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: #FFFFFF">Hola, soy Juan Carlos, fundador de Kódika Software.</h2>
 <p style="margin: 0; color: #B5C1CE; font-size: 18px">Empecé en soporte técnico, pasé al desarrollo web y hoy construyo APIs y plataformas empresariales con .NET en Massy Energy. También trabajé con un equipo en España. Esa trayectoria me permite entender el software completo: desde la infraestructura hasta la arquitectura.</p>
 <p style="margin: 0; color: #B5C1CE; font-size: 18px">Soy responsable, proactivo y orientado a soluciones. Me mantengo al día con cursos de Platzi, Udemy y Microsoft.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px">
@@ -501,32 +522,7 @@ details[open] .faq-plus{transform:rotate(45deg)}
 </div>
 </section>
 
-<!-- TESTIMONIOS -->
-<section style="border-top: 1px solid #16202D; background: #0A1019">
-<div style="max-width: 1240px; margin: 0 auto; padding: 100px 24px; display: flex; flex-direction: column; gap: 48px">
-<div class="reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
-<span style="padding: 6px 14px; border-radius: 999px; background: rgba(79,209,232,0.12); color: #8BE4F2; font-size: 13px; font-weight: 600; letter-spacing: 0.04em">TESTIMONIOS</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.1rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: #FFFFFF">Lo que dicen quienes han trabajado conmigo</h2>
-</div>
-<div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px">
-<figure style="margin: 0; padding: 30px; border-radius: 20px; border: 1px solid #1E2A3A; background: #0E1520; display: flex; flex-direction: column; gap: 18px">
-<span aria-hidden="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 56px; line-height: 0.6; color: #3DDC97">“</span>
-<blockquote style="margin: 0; color: #DCE4ED; font-size: 17px">[TESTIMONIO REAL DE UN CLIENTE O COMPAÑERO — pídelo como recomendación en LinkedIn]</blockquote>
-<figcaption style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #1C2838"></span><span style="display: flex; flex-direction: column; line-height: 1.3"><span style="font-weight: 600; color: #FFFFFF">[NOMBRE]</span><span style="font-size: 14px; color: #A3B0BF">[CARGO · EMPRESA]</span></span></figcaption>
-</figure>
-<figure style="margin: 0; padding: 30px; border-radius: 20px; border: 1px solid #1E2A3A; background: #0E1520; display: flex; flex-direction: column; gap: 18px">
-<span aria-hidden="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 56px; line-height: 0.6; color: #5AA9FF">“</span>
-<blockquote style="margin: 0; color: #DCE4ED; font-size: 17px">[TESTIMONIO REAL DE UN CLIENTE O COMPAÑERO]</blockquote>
-<figcaption style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #1C2838"></span><span style="display: flex; flex-direction: column; line-height: 1.3"><span style="font-weight: 600; color: #FFFFFF">[NOMBRE]</span><span style="font-size: 14px; color: #A3B0BF">[CARGO · EMPRESA]</span></span></figcaption>
-</figure>
-<figure style="margin: 0; padding: 30px; border-radius: 20px; border: 1px solid #1E2A3A; background: #0E1520; display: flex; flex-direction: column; gap: 18px">
-<span aria-hidden="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 56px; line-height: 0.6; color: #FFB547">“</span>
-<blockquote style="margin: 0; color: #DCE4ED; font-size: 17px">[TESTIMONIO REAL DE UN CLIENTE O COMPAÑERO]</blockquote>
-<figcaption style="display: flex; align-items: center; gap: 12px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #1C2838"></span><span style="display: flex; flex-direction: column; line-height: 1.3"><span style="font-weight: 600; color: #FFFFFF">[NOMBRE]</span><span style="font-size: 14px; color: #A3B0BF">[CARGO · EMPRESA]</span></span></figcaption>
-</figure>
-</div>
-</div>
-</section>
+<!-- TESTIMONIOS: oculto hasta tener testimonios reales. Restaurar desde el historial de git (commit anterior a "Oculta testimonios de ejemplo"). -->
 
 <!-- FAQ -->
 <section id="faq" style="max-width: 900px; margin: 0 auto; padding: 110px 24px; display: flex; flex-direction: column; gap: 40px">
@@ -604,7 +600,7 @@ details[open] .faq-plus{transform:rotate(45deg)}
 
 <footer style="border-top: 1px solid #16202D">
 <div style="max-width: 1240px; margin: 0 auto; padding: 30px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; color: #A3B0BF">
-<span>© 2026 Juan Carlos Bonilla Gonzalez · Desarrollo web y software a la medida · Bogotá, Colombia</span>
+<span style="display: inline-flex; align-items: center; gap: 10px"><img src="assets/img/marca/kodika-icon.svg" alt="" width="24" height="24">© 2026 Kódika Software · Juan Carlos Bonilla Gonzalez · Bogotá, Colombia</span>
 <nav aria-label="Pie de página" style="display: flex; flex-wrap: wrap; gap: 20px">
 <a class="navlink" href="#servicios">Servicios</a>
 <a class="navlink" href="#planes">Soluciones</a>

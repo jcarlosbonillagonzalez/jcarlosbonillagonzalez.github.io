@@ -17,5 +17,5 @@ export const CONTACT_CONFIG = Object.freeze({
   formEndpoint: 'https://formsubmit.co/ajax/jcarlosbonilla.gonzalez@gmail.com',
 
   /** Asunto del correo que llega con cada mensaje. */
-  emailSubject: 'Nuevo contacto desde tu sitio web',
+  emailSubject: 'Nuevo contacto desde Kódika Software',
 });

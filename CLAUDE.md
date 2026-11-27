@@ -1,4 +1,4 @@
-# Proyecto: Sitio web personal / hoja de vida comercial — Juan Carlos Bonilla Gonzalez
+# Proyecto: Sitio web de Kódika Software — hoja de vida comercial de Juan Carlos Bonilla Gonzalez
 
 ## Objetivo
 Sitio web para dar a conocer mis servicios de **desarrollo de páginas web y sistemas de información a la medida**.
@@ -10,6 +10,13 @@ Funciona como hoja de vida comercial. Se publicará en **GitHub Pages** (sitio e
 - Respetar las descripciones y notas que se dejen en el proyecto (este archivo, README, comentarios).
 - Mantener la estructura de carpetas definida abajo. Si algo nuevo no encaja, proponer dónde va antes de crearlo.
 - Pedir confirmación antes de hacer `git push`.
+
+## Marca
+- Nombre: **Kódika Software** (la ó siempre con el degradado #3DDC97 → #5AA9FF). Firma: "por Juan Carlos Bonilla".
+- Logo: "K de nodos" (barra + dos diagonales con nodos verdes y azules). Archivos en `assets/img/marca/`:
+  `kodika-icon.svg` (oscuro), `kodika-icon-light.svg`, `kodika-logo.svg` / `kodika-logo-light.svg` (horizontal, texto en trazos),
+  PNG del logo, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `og-kodika.png` (vista previa al compartir, 1200×630).
+- No deformar el logo ni cambiar sus colores; sobre fondo claro usar las versiones `-light`.
 
 ## Estado actual
 - `index.html` contiene el diseño aprobado completo en **un solo archivo** (estilos en línea + `<style>` en el head).
@@ -44,7 +51,8 @@ Funciona como hoja de vida comercial. Se publicará en **GitHub Pages** (sitio e
 │   │   └── modules/
 │   │       ├── whatsapp.js      (enlaces y mensaje para WhatsApp)
 │   │       ├── emailSender.js   (envío por FormSubmit; reemplazable)
-│   │       └── contactForm.js   (validación y estado del formulario)
+│   │       ├── contactForm.js   (validación y estado del formulario)
+│   │       └── mobileMenu.js    (menú móvil)
 │   ├── img/                 (foto, capturas de proyectos)
 │   └── docs/                (hoja de vida en PDF)
 ├── CLAUDE.md
@@ -54,7 +62,7 @@ Funciona como hoja de vida comercial. Se publicará en **GitHub Pages** (sitio e
 ## Tareas pendientes (en orden sugerido)
 1. Refactorizar `index.html` a la estructura objetivo: mover estilos en línea a clases reutilizables con variables CSS.
    El resultado visual debe quedar idéntico.
-2. Hacerlo responsive y revisar la vista móvil (menú hamburguesa en celular).
+2. ~~Menú hamburguesa en celular~~ HECHO (`assets/js/modules/mobileMenu.js`). Falta revisar el resto de secciones en móvil.
 3. ~~Botón flotante de WhatsApp~~ HECHO.
 4. ~~Formulario de contacto~~ HECHO (FormSubmit + WhatsApp). El JS usa módulos ES: funciona en GitHub Pages o con un servidor local, no abriendo el archivo con doble clic.
 5. SEO básico: meta tags, Open Graph, favicon, `sitemap.xml`, `robots.txt`.
