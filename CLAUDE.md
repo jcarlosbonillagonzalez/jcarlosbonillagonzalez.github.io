@@ -58,7 +58,8 @@ Funciona como hoja de vida comercial. Se publicará en **GitHub Pages** (sitio e
 7. Ideas a futuro: formulario de cotización guiado (sin precios), páginas de detalle por proyecto, selector español/inglés, modo claro.
 
 ## Datos que faltan (marcados entre [CORCHETES] en el HTML)
-- [TU FOTO PROFESIONAL], [TU NÚMERO] de WhatsApp, capturas de Gym Fiamma y HydroScan,
+- Ya cargadas: foto (`assets/img/juan-carlos-bonilla.jpg`) y capturas en `assets/img/proyectos/`.
+- Falta: [TU NÚMERO] de WhatsApp,
   testimonios reales ([TESTIMONIO], [NOMBRE], [CARGO · EMPRESA]), enlace al PDF de la hoja de vida.
 - La promesa "respondo en menos de 24 horas" está en Contacto: confirmar o cambiar.
 - No inventar cifras, testimonios ni clientes.
